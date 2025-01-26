@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload with Dynamic Rectangle and CSV Header Dropdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            text-align: center;
+        }
+        #image-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        #image {
+            width: 100%;
+            height: auto;
+        }
+        .rectangle {
+            position: absolute;
+            border: 2px solid red;
+            background: rgba(255, 0, 0, 0.3);
+            cursor: pointer;
+        }
+        .slider-container {
+            margin-top: 20px;
+        }
+        .slider {
+            width: 200px;
+            margin: 10px;
+        }
+        #dropdown-container {
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        .file-slider-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #download-button {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Image, Adjust Rectangle, and Select CSV Header</h1>
+
+    <div class="file-slider-container">
+        <!-- Image Upload -->
+        <input type="file" id="image-upload" accept="image/*">
+        
+        <!-- Sliders for adjusting rectangle position and size -->
+        <div class="slider-container">
+            <label for="x1-slider">X1 (Top-left X): <span id="x1-val">100</span></label><br>
+            <input type="range" id="x1-slider" class="slider" min="0" max="3000" value="100">
+        </div>
+        <div class="slider-container">
+            <label for="y1-slider">Y1 (Top-left Y): <span id="y1-val">100</span></label><br>
+            <input type="range" id="y1-slider" class="slider" min="0" max="3000" value="100">
+        </div>
+    </div>
+
+    <div class="file-slider-container">
+        <!-- CSV File Upload -->
+        <input type="file" id="csv-upload" accept=".csv">
+
+        <!-- Sliders for adjusting rectangle position and size -->
+        <div class="slider-container">
+            <label for="x2-slider">X2 (Bottom-right X): <span id="x2-val">300</span></label><br>
+            <input type="range" id="x2-slider" class="slider" min="0" max="4000" value="300">
+        </div>
+        <div class="slider-container">
+            <label for="y2-slider">Y2 (Bottom-right Y): <span id="y2-val">150</span></label><br>
+            <input type="range" id="y2-slider" class="slider" min="0" max="4000" value="150">
+        </div>
+    </div>
+
+    <!-- Dropdown for CSV header selection -->
+    <div id="dropdown-container">
+        <label for="csv-header">Select CSV Header:</label>
+        <select id="csv-header">
+            <!-- Options will be populated dynamically -->
+        </select>
+    </div>
+
+    <!-- Image container -->
+    <div id="image-container">
+        <img id="image" src="" alt="Image" style="display: none;">
+        <div id="rectangle" class="rectangle" style="width: 200px; height: 50px; top: 100px; left: 100px;"></div>
+    </div>
+    <form id="certificate-form" method="POST" enctype="multipart/form-data">
+        <!-- Button Container -->
+        <div class="button-container">
+            <!-- Submit Button -->
+            <button id="submit-button">Submit</button>
+            <!-- Download Button -->
+            <a id="download-button" style="display: none;" href="#" download="certificates.zip">Download Certificates</a>
+        </div>
+    </form>
+
+    <!-- Link to frontend.js -->
+    <script src="{{ url_for('static', filename='js/frontend.js') }}"></script>
+</body>
+</html>
