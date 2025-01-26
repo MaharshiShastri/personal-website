@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of Maharshi Shastri, specializing in AI, Quantum Computing, and Multi-Agent Systems.">
+    <meta name="keywords" content="AI, Quantum Computing, Robotics, Portfolio, Computer Engineering">
+    <title>Maharshi Shastri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexstyles.css') }}">
+    <script src="{{ url_for('static', filename='js/indexbackground.js') }}" defer></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Maharshi Shastri</h1>
+        <div class="flag">
+            <div class="saffron"></div>
+            <div class="white">
+                <div class="chakra-container">
+                    <!-- Image of the Ashoka Chakra -->
+                    <img class="chakra-img" src='https://cdn.pixabay.com/photo/2023/04/06/16/29/ashoka-chakra-7904695_1280.png' alt='Ashoka Chakra'/>
+                </div>
+            </div>
+            <div class="green"></div>
+        </div>
+        <p>Student(Batch 2026) @ <a href="https://slrtce.in/" target="_blank"> Shree L.R. Tiwari College of Engineering- Affiliated to University of Mumbai</a></p>
+        <div class="hero">
+            <h1>Innovator turning science fiction to reality</h1>
+        </div>        
+    </header>
+    <main class="main-content">
+        <!-- About Section -->
+        <section class="about">
+            <h2>About Me</h2>
+            <p>
+                I am a computer and electronics aspirant specializing in <b>Artificial Intelligence, Quantum Computing, and Multi-Agent Systems</b>.
+                With a strong academic and research background, my passion lies in advancing technologies that bridge computation, AI, and real-world applications.<br><br>
+                My methodology to also create projects and teaching differs as compared to majority. I believe that by breaking down projects into smaller do-able projects is necessary
+                and then building up the project from base. For example, my profession project, Multi-player Chess Game, was:
+                <ol class="numbered-list">
+                    <li>First to create a basic chess game using python during my Semesters 3 and 4.</li>
+                    <li>Later on, in my Semester 6, we had a course on Cloud Computing and decided to build the Multi-player functionality at that moment</li></ol> which helped me to learn about Cloud Computing and also to learn about how to deploy games on cloud.
+
+            </p>
+        </section>
+
+        <!-- Research Interests -->
+        <section class="research">
+            <h2>Research Interests</h2>
+            <ul>
+                <li>Quantum Computing and Quantum Machine Learning</li>
+                <li>Multi-Agent Reinforcement Learning (MARL)</li>
+                <li>High-Performance Computing and Optimization</li>
+                <li>Artificial Intelligence in Robotics</li>
+            </ul>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="publications">
+            <h2>Professional Projects</h2>
+            <ul>
+                <li>
+                    <strong><a href="https://github.com/MaharshiShastri/neuroevolutionbot" target="_blank">Neuroevolution Sports Robot</a></strong> @ Shree L.R. Tiwari College Of Engineering- Affiliated to University of Mumbai, 2025.
+                </li>
+                <li>
+                    <strong><a href="https://github.com/MaharshiShastri/Delivery-system/tree/location-API" target="_blank">Door-to-Door Drone delivery system</a></strong> @ Shree L.R. Tiwari College of Engineering- Affiliated to University of Mumbai, 2025.
+                </li>
+                <li>
+                    <strong><a href="https://github.com/MaharshiShastri/MultiplayerChessGame" target="_blank">Multi-player Chess game using Python</a></strong>@ Shree L.R. Tiwari College of Engineering- Affiliated to University of Mumbai, 2025.
+                </li>
+                <li><a href='https://github.com/MaharshiShastri/Automation-Project' target="_blank">Automation(Domains: Web Scrapping, Key Performance Indicator</a> & <a href="https://github.com/MaharshiShastri/certificategeneration" target="_blank"> Certificate Generator</a>)</li>
+                <li><a href="https://github.com/MaharshiShastri/Movie-Recommendation-System" target="_blank">Movie Recommendation System(Domain: Machine Learning)</a></li>
+                <li><a href="https://github.com/MaharshiShastri/FaceRecognitionSystem" target="_blank">Facial Recognition System(Domain: Deep Learning)</a></li>
+                <li>Additional projects are currently under development and will be showcased soon.</li>
+            </ul>
+        </section>
+
+        <!-- Teaching Section -->
+        <section class="teaching">
+            <h2>Demos:</h2>
+            <p>I have created demos for 2 of my projects:</p>
+            <ul>
+                <li><strong><a href="/certificate-generator">Certificate Generator</a></strong></li>
+                <li><strong><a href="/multiplayergame">Multi-player Chess Game</a></strong></li>
+            </ul>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Information</h2>
+            <p>
+                <strong>Email:</strong> maharshishastri18@gmail.com
+                <strong>Mobile Number:</strong> +91-7208622619
+            </p>
+            <a href="#" class="button">Open Contact Form</a>
+            <p>Download or view my resume</p>
+            <a href="{{ url_for('static', filename='Shastri_Maharshi_CV.pdf') }}" target="_blank" class="button">View Resume</a><br><br>
+            <embed src="{{ url_for('static', filename='Shastri_Maharshi_CV.pdf') }}" width="100%" height="600px" type="application/pdf">
+        </section>
+
+        <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal">
+    <div class="modal-content card">
+        <span class="close">&times;</span>
+        <h2>Contact Me</h2>
+        <form action="/contact" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+            </div>
+            <button type="submit" class="button">Send Message</button>
+        </form>
+    </div>
+    </div>
+    <section class="positions">
+        <h2>Positions held</h2>
+        <ul>
+            <li><strong>Technical Head</strong> - <a href="https://slrtce.in/student" target="_blank"> 
+                Student Council, Shree L.R. Tiwari College of Engineering (August 2024- August 2025)</a></li>
+            <li><strong>Core Team Member(Technical Lead)</strong> - Artificial Intelligence and Machine Learning Club, Shree L.R. Tiwari College of Engineering (May 2024- May 2025)</li>
+            <li><strong>Volunteer</strong> - <a href="https://unnatbharatabhiyan.gov.in/baseline-survey?csrf_uba=a80cad2bf9f70b52aaced934ef89e009&state_id=20&district_id=418&institute_id=38785" target="_blank">
+                Bharat Abhiyan(UBA), Shree L.R. Tiwari College of Engineering (August 2023- August 2025)</a></li>
+        </ul>
+    </section>
+    <section class="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li>
+                <strong>Intern</strong> - Wadhwani Electronics Lab, IIT Bombay (Summer 2024)
+                <ul>
+                    <li>Comprehensive VHDL Introduction: Covered digital systems, logic design, and VHDL basics.</li>
+                    <li>Hands-on Learning: Wrote, simulated, and synthesized digital circuits using VHDL.</li>
+                    <li>Project: Designed and implemented a 12-bit traffic light controller using VHDL.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>ML Intern</strong> - Suvidha Foundation (Winter 2024)
+                <ul>
+                    <li>Developed a chatbot using Natural Language Processing (NLP).</li>
+                    <li>Did social campaign and social awareness for girl child and women's protection in rural villages of Maharashtra.</li>
+                </ul>
+            </li>
+            <li>
+                <strong><a href="https://www.agorize.com/en/challenges/blaisepascalquantumchallenge2025" target ="_blank">Blaise Pascal Quantum Challenge</a></strong>
+                <ul>
+                    <li>Building a machine learning model on Quantum Computers.</li>
+                    <li>Task is to develop a vible solution using Quantum Machine Learning algorithm to further advancements in UN's Sustainable Development Goals(Goals 9 & 12).</li>
+                    <li>Follow to know more</li>
+                </ul>
+            </li>
+        </ul>
+    </section><section class="goals">
+        <h2>Future Dreams and Goals</h2>
+        <p>
+            My ultimate goal is to contribute to the advancement of <strong>Quantum Computing</strong> and <strong>Artificial Intelligence</strong> by developing innovative solutions that solve real-world problems. I aspire to:
+        </p>
+        <ul>
+            <li>Pioneer research in Quantum computers and Artificial Intelligence & Machine Learning and its applications in robotics.</li>
+            <li>Establish a startup focused on Quantum Computers to make Quantum Technology accessible to evey individual on and beyond Earth.</li>
+            <li>Mentor the next generation of engineers and researchers in cutting-edge technologies.</li>
+            <li>Collaborate with global organizations to make technology accessible and sustainable.</li>
+            <li>Finally, I intend on creating Quantum Cryptography and Quantum Internet to help connect every individual on this planet and beyond.</li>
+        </ul>
+    </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 Mr. Maharshi Shastri. All rights reserved.</p>
+    </footer>
+
+    <!-- Canvas for animated background -->
+    <canvas id="backgroundCanvas"></canvas>
+    <button id="scrollToTop" class="button">↑</button>
+</body>
+</html>
