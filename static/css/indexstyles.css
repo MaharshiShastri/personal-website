@@ -1,0 +1,394 @@
+/* General Styles */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #0a1e30, #000000); /* Dark blue to black gradient */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: 'Poppins', sans-serif;
+}
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(10, 30, 48, 0.9);
+    color: #63d1f4;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(10, 30, 48, 0.9);
+    border-bottom: 2px solid #63d1f4;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #63d1f4; /* Light blue for the header text */
+    font-size: 3rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #a3d9f7; /* Softer blue for the subtext */
+    font-size: 1.5rem;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in-out;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.main-content section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(15, 40, 60, 0.85); /* Slightly transparent box */
+    border-radius: 8px;
+    background: linear-gradient(to right, #1a2a3a, #0a1e30);
+    animation: slideIn 0.8s ease-out;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.main-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #63d1f4;
+    z-index: -1;
+}
+
+.main-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-content ul li {
+    margin: 5px 0;
+    padding-left: 15px;
+    position: relative;
+}
+
+.main-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #63d1f4;
+}
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left:  0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content.card {
+    background-color: #1a2a3a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    animation: slideIn 0.5s ease-out;
+}
+
+.modal-content.card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #63d1f4;
+    text-align: center;
+}
+
+.modal-content.card .form-group {
+    margin-bottom: 20px;
+}
+
+.modal-content.card label {
+    display: block;
+    font-size: 1rem;
+    color: #a3d9f7;
+    margin-bottom: 5px;
+}
+
+.modal-content.card input,
+.modal-content.card textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #63d1f4;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.modal-content.card textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.modal-content.card .button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: #63d1f4;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #a3d9f7;
+}
+/* Positions, Experience, and Goals Sections */
+.positions,
+.experience,
+.goals {
+    margin-bottom: 40px;
+    padding: 30px;
+    background-color: rgba(15, 40, 60, 0.85);
+    border-radius: 8px;
+    animation: slideIn 0.8s ease-out;
+}
+
+.positions h2,
+.experience h2,
+.goals h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #63d1f4;
+}
+
+.positions ul,
+.experience ul,
+.goals ul {
+    list-style: none;
+    padding: 0;
+}
+
+.positions ul li,
+.experience ul li,
+.goals ul li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.positions ul li::before,
+.experience ul li::before,
+.goals ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #63d1f4;
+}
+
+.experience ul ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.experience ul ul li::before {
+    content: "▹";
+    color: #a3d9f7;
+}
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(10, 30, 48, 0.9);
+    font-size: 0.9rem;
+    color: #a3d9f7;
+}
+
+/* Contact Information */
+.contact p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contact strong {
+    color: #63d1f4; /* Highlight contact details */
+}
+
+/* Canvas Background */
+canvas#backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+/* Default link color */
+a {
+    color: #63d1f4; /* Light blue color */
+    text-decoration: none; /* Remove underline (optional) */
+    z-index: 1;
+}
+
+/* Visited link color */
+a:visited {
+    color: #a3d9f7; /* Softer blue for visited links */
+}
+
+/* Hover effect */
+a:hover {
+    color: #ffffff; /* White color on hover */
+    text-decoration: underline; /* Add underline on hover (optional) */
+}
+
+/* Active link color (when clicked) */
+a:active {
+    color: #ff6347; /* Tomato color for active links */
+}
+.button {
+    background-color: #63d1f4;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(to right, #63d1f4, #a3d9f7);
+}
+
+.button:hover {
+    background-color: #a3d9f7;
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.numbered-list {
+    list-style-type: none; /* Remove default numbering */
+    counter-reset: my-counter; /* Initialize a counter */
+    padding-left: 0; /* Remove default padding */
+}
+
+.numbered-list li {
+    counter-increment: my-counter; /* Increment the counter */
+    margin: 10px 0; /* Add spacing between items */
+    font-size: 1.2rem; /* Adjust font size */
+    color: #63d1f4; /* Text color */
+}
+
+.numbered-list li::before {
+    content: counter(my-counter) ". "; /* Add custom numbering */
+    color: #ff6347; /* Number color */
+    font-weight: bold; /* Make numbers bold */
+    margin-right: 10px; /* Add spacing between number and text */
+}
+.flag {
+    width: 300px;
+    height: 180px;
+    margin: 20px auto;
+    border: 2px solid #000;
+    animation: wave 2s infinite ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.saffron, .white, .green {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+}
+
+/* Saffron Section */
+.saffron {
+    background-color: #ff9933;
+    top: 0;
+}
+
+/* White Section */
+.white {
+    background-color: white;
+    top: 60px;
+}
+/* Ashoka Chakra */
+.chakra-container {
+    position: absolute; /* To Make Chakra Float over Frames */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);  /* To Make Chakra Center */
+  }
+  
+  .chakra-img {
+    max-width: 100%;
+    width: 40px;
+    animation: rotate 4s linear infinite;  
+  }
+  
+  /* Rotating Animation CSS */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+
+/* Green Section */
+.green {
+    background-color: #138808;
+    top: 120px;
+}
+
+/* Flag Animation */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Ashoka Chakra Rotation */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
